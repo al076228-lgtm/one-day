@@ -1,0 +1,1345 @@
+
+/* ONE DAY - Estilos principales */
+
+/* Variables generales */
+
+:root {
+    --bg: #0a0b10;
+    --surface: #10121a;
+    --border: #292936;
+    --text: #f4eff5;
+    --muted: #aaa9b5;
+
+    --gold: #b9a7c9;
+    --gold-light: #d5c3d8;
+
+    --font-display: Georgia, 'Times New Roman', serif;
+}
+
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', Arial, sans-serif;
+    line-height: 1.65;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    line-height: 1.11;
+}
+
+h2 {
+    font-size: clamp(2.25rem, 5vw, 4.25rem);
+    letter-spacing: -0.03em;
+}
+
+h2 span {
+    color: var(--gold);
+}
+
+.contenedor {
+    width: min(1160px, 88%);
+    margin-inline: auto;
+}
+
+.etiqueta,
+.etiqueta_inicio {
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.etiqueta_dorada {
+    color: var(--gold);
+}
+
+/* Encabezado */
+
+.cabecera {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    border-bottom: 1px solid #ffffff15;
+}
+
+.barra_nav {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+}
+
+/* Logotipo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo_icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    color: var(--gold-light);
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Menú de navegación */
+
+.menu_links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.78rem;
+    color: #d3ced1;
+}
+
+.menu_links a {
+    transition: color 0.3s;
+}
+
+.menu_links a:hover,
+.link_destacado:hover {
+    color: var(--gold);
+}
+
+.link_escuchar {
+    border: 1px solid #b9a7c966;
+    border-radius: 100px;
+    padding: 9px 20px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.link_escuchar:hover {
+    background: var(--gold);
+    color: #14121a;
+}
+
+.btn_menu {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--text);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* Portada */
+
+.portada {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0a0b10;
+}
+
+/* Fotografía principal */
+
+.portada_fondo {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url("img/portada.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Textos de portada */
+
+.portada_texto {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+    padding: 100px 30px;
+    text-align: center;
+
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+.portada .etiqueta_inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-light);
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+/* Título principal */
+
+.portada h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(55px, 10vw, 115px);
+    font-weight: 400;
+    letter-spacing: 4px;
+    line-height: 1.1;
+
+    margin: 20px 0;
+
+    color: #f4eff5;
+    text-shadow: 0 5px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* Frase principal */
+
+.frase_inicio {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 20px 0 15px;
+    color: var(--gold-light);
+}
+
+/* Descripción */
+
+.desc_inicio {
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: #f0f0f0;
+    font-size: 18px;
+    line-height: 1.8;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Botones principales */
+
+.botones_inicio {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 33px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    min-height: 51px;
+    padding: 0 25px;
+
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.25s,
+        background 0.25s,
+        border-color 0.25s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn_dorado {
+    background: #b9a7c9;
+    color: #17141d;
+}
+
+.btn_dorado:hover {
+    background: #d5c3d8;
+}
+
+.btn_borde {
+    border: 1px solid #b9a7c9;
+    background: rgba(15, 12, 20, 0.35);
+    color: #f4eff5;
+}
+
+.btn_borde:hover {
+    background: rgba(185, 167, 201, 0.15);
+    border-color: #d5c3d8;
+}
+
+/* Indicador inferior */
+
+.indica_scroll {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #c5b9ca;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+}
+
+/* Secciones generales */
+
+.seccion {
+    padding: 125px 0;
+    scroll-margin-top: 30px;
+}
+
+/* Nuestra historia */
+
+.historia {
+    background: #0d0e15;
+}
+
+.historia_grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 100px;
+}
+
+.historia_grid h2 {
+    margin: 23px 0;
+}
+
+.historia_texto {
+    padding-top: 36px;
+    color: var(--muted);
+}
+
+.historia_texto p {
+    margin-bottom: 22px;
+}
+
+.historia_texto strong {
+    color: var(--text);
+}
+
+.link_destacado {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+/* Títulos de secciones */
+
+.seccion_titulo {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 47px;
+}
+
+.seccion_titulo h2 {
+    margin: 20px 0 0;
+}
+
+.seccion_titulo > p {
+    max-width: 300px;
+    color: var(--muted);
+    font-size: 0.94rem;
+    margin: 0 0 6px;
+}
+
+/* Canción destacada */
+
+.tarjeta_principal {
+    display: grid;
+    grid-template-columns: 0.93fr 1.07fr;
+
+    background: linear-gradient(
+        140deg,
+        #181720,
+        #111218
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Ilustración del disco */
+
+
+.disco_portada {
+    position: relative;
+    min-height: 560px;
+    overflow: hidden;
+    background: #111218;
+}
+
+
+.disco_imagen {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.disco_texto {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    z-index: 2;
+
+    color: white;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+}
+
+.disco_texto span {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.disco_texto h3 {
+    font-size: clamp(40px, 6vw, 75px);
+    margin: 10px 0 0;
+}
+/**/
+
+
+
+.disco_portada::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        transparent 65%
+    );
+}
+
+/* Información de la canción */
+
+.cancion_info {
+    padding: 55px clamp(28px, 5vw, 75px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.cancion_info h3 {
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    letter-spacing: -0.04em;
+    margin: 19px 0 4px;
+}
+
+.cancion_artista {
+    font-size: 1.08rem;
+    color: white;
+    margin-bottom: 29px;
+}
+
+.cancion_artista span {
+    color: var(--muted);
+}
+
+.frase_motivadora {
+    padding: 14px 0 14px 20px;
+
+    border-left: 2px solid var(--gold);
+
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+
+.cancion_desc {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 22px;
+}
+
+
+/* Datos musicales */
+
+.cancion_datos {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+
+    margin: 20px 0 27px;
+    padding: 18px 0;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.cancion_datos span {
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+
+.cancion_datos b {
+    display: block;
+
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-top: 5px;
+}
+
+/* Spotify */
+
+.spotify {
+    width: 100%;
+    min-height: 152px;
+}
+
+.spotify iframe {
+    display: block;
+    border-radius: 12px;
+}
+
+.nota_spotify {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin: 7px 0 0;
+}
+
+/* Guía musical */
+
+.guia {
+    background: #101119;
+}
+
+.guia_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.tarjeta_guia {
+    background: #171820;
+    border: 1px solid #2c2c39;
+    border-radius: 12px;
+
+    padding: 28px 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 340px;
+
+    transition:
+        transform 0.25s,
+        border-color 0.25s;
+}
+
+.tarjeta_guia:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+}
+
+.guia_num {
+    font-size: 0.7rem;
+    color: var(--gold);
+}
+
+.guia_icono {
+    font-size: 2.4rem;
+    color: var(--gold);
+    margin: 28px 0 16px;
+    line-height: 1;
+}
+
+.tarjeta_guia h3 {
+    font-size: 1.3rem;
+    margin: 0 0 12px;
+}
+
+.tarjeta_guia p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
+
+.guia_prueba {
+    margin-top: auto;
+    padding-top: 12px;
+
+    font-size: 0.63rem;
+    letter-spacing: 0.04em;
+    color: var(--gold-light);
+}
+
+/* Descubrir música */
+
+.descubrir {
+    background: #0b0c12;
+}
+
+/* Filtros */
+
+.filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 0 28px;
+}
+
+.btn_filtro {
+    border: 1px solid #383841;
+    border-radius: 50px;
+
+    color: #d4d1d2;
+    background: transparent;
+
+    padding: 10px 22px;
+
+    cursor: pointer;
+    font-size: 0.79rem;
+    transition: 0.2s;
+}
+
+.btn_filtro:hover,
+.btn_filtro.filtro_activo {
+    background: var(--gold);
+    color: #19151a;
+    border-color: var(--gold);
+}
+
+/* Tarjetas musicales */
+
+.canciones_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+
+/* Tarjetas musicales */
+
+.tarjeta_music {
+    background: #13141b;
+    border: 1px solid #292935;
+    border-radius: 12px;
+    padding: 12px;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tarjeta_music:hover {
+    transform: translateY(-5px);
+    border-color: #b9a7c9;
+}
+
+.tarjeta_music[hidden] {
+    display: none;
+}
+
+
+/* Portadas musicales */
+
+.music_portada {
+    position: relative;
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    background: #201c29;
+}
+
+
+/* Imágenes reales de los álbumes */
+
+.music_imagen {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.tarjeta_music:hover .music_imagen {
+    transform: scale(1.06);
+}
+
+.music_portada span {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+}
+
+.music_portada b {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 7vw, 7rem);
+    font-weight: 400;
+    opacity: 0.65;
+}
+
+.color_dorado {
+    background: radial-gradient(
+        circle at 65% 35%,
+        #cab1d0,
+        #744b70 40%,
+        #221f32 90%
+    );
+}
+
+.color_morado {
+    background: radial-gradient(
+        circle at 30% 60%,
+        #b59bcf,
+        #655083 40%,
+        #242135 90%
+    );
+}
+
+.color_azul {
+    background: radial-gradient(
+        circle at 45% 55%,
+        #90abbf,
+        #395575 45%,
+        #172032 90%
+    );
+}
+
+.color_verde {
+    background: radial-gradient(
+        circle at 55% 40%,
+        #ddcda2,
+        #7c9888 35%,
+        #26383a 90%
+    );
+}
+
+/* Datos de las tarjetas */
+
+.music_datos {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    gap: 7px;
+    margin: 16px 4px 8px;
+}
+
+.music_datos h3 {
+    font-size: 1rem;
+    margin: 0 0 4px;
+}
+
+.music_datos p {
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+.music_datos a {
+    border: 1px solid #44414a;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+    flex-shrink: 0;
+}
+
+.music_datos a:hover {
+    background: var(--gold);
+    color: #16121a;
+}
+
+.music_emocion {
+    color: var(--gold);
+    font-size: 0.66rem;
+    margin-left: 4px;
+}
+
+.contador {
+    color: var(--muted);
+    font-size: 0.77rem;
+    margin-top: 24px;
+}
+
+/* Despedida */
+
+.despedida {
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+    padding: 130px 0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 100%,
+            #674a7070,
+            transparent 60%
+        ),
+        #15121b;
+}
+
+.despedida_texto {
+    max-width: 790px;
+}
+
+.despedida h2 {
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    margin: 28px 0;
+}
+
+.despedida h2 em {
+    font-style: normal;
+    color: var(--gold);
+}
+
+.despedida p:not(.etiqueta) {
+    color: var(--muted);
+    max-width: 530px;
+    margin: 0 auto 30px;
+}
+
+/* Pie de página */
+
+.pie {
+    border-top: 1px solid #2d2932;
+    padding: 35px 0;
+    background: #0a0b10;
+}
+
+.pie_contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.pie p {
+    color: var(--muted);
+    font-size: 0.75rem;
+    max-width: 390px;
+    margin: 0;
+}
+
+.pie_contenido > span {
+    color: #8a8590;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+}
+
+/* Diseño para pantallas medianas */
+
+@media (max-width: 950px) {
+
+    .menu_links {
+        gap: 16px;
+    }
+
+    .menu_links a {
+        font-size: 0.72rem;
+    }
+
+    .historia_grid {
+        gap: 45px;
+    }
+
+    .guia_grid,
+    .canciones_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tarjeta_principal {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .disco_portada {
+        min-height: 530px;
+    }
+
+    .cancion_info {
+        padding: 35px 28px;
+    }
+
+}
+
+/* Diseño para celulares */
+
+@media (max-width: 680px) {
+
+    .contenedor {
+        width: calc(100% - 36px);
+    }
+
+    .barra_nav {
+        min-height: 70px;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 19px;
+        gap: 8px;
+    }
+
+    .logo_icono {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .btn_menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    .link_escuchar {
+        padding: 7px 12px;
+    }
+
+    .menu_links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+
+        background: #11121b;
+        padding: 22px 7%;
+
+        border-bottom: 1px solid var(--border);
+        gap: 20px;
+    }
+
+    .menu_links.menu_abierto {
+        display: flex;
+    }
+
+    .portada {
+        min-height: 100svh;
+    }
+
+    .portada_fondo {
+        background-position: center;
+    }
+
+    .portada_texto {
+        padding: 120px 12px 110px;
+    }
+
+    .portada h1 {
+        font-size: clamp(48px, 12vw, 75px);
+        letter-spacing: 2px;
+    }
+
+    .portada .etiqueta_inicio {
+        font-size: 0.56rem;
+    }
+
+    .frase_inicio {
+        font-size: 16px;
+    }
+
+    .desc_inicio {
+        font-size: 15px;
+    }
+
+    .indica_scroll {
+        font-size: 0.52rem;
+        bottom: 22px;
+    }
+
+    .seccion {
+        padding: 80px 0;
+    }
+
+    .historia_grid,
+    .tarjeta_principal {
+        grid-template-columns: 1fr;
+    }
+
+    .historia_texto {
+        padding-top: 0;
+    }
+
+    .seccion_titulo {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .seccion_titulo > p {
+        margin: 20px 0 0;
+    }
+
+    .disco_portada {
+        min-height: 380px;
+    }
+
+    .disco_frase {
+        font-size: 3.8rem;
+    }
+
+    .cancion_info {
+        padding: 35px 25px;
+    }
+
+    .guia_grid,
+    .canciones_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+
+    .tarjeta_guia {
+        min-height: 355px;
+        padding: 20px 16px;
+    }
+
+    .tarjeta_guia p {
+        font-size: 0.8rem;
+    }
+
+    .guia_icono {
+        margin: 20px 0 12px;
+    }
+
+    .music_datos h3 {
+        font-size: 0.88rem;
+    }
+
+    .pie_contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cancion_datos {
+        gap: 7px;
+    }
+
+}
+
+/* Celulares pequeños */
+
+@media (max-width: 390px) {
+
+    .link_escuchar {
+        display: none;
+    }
+
+    .portada h1 {
+        font-size: 45px;
+    }
+
+    .indica_scroll {
+        font-size: 0.45rem;
+    }
+
+    .guia_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta_guia {
+        min-height: 270px;
+    }
+
+    .canciones_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .music_datos {
+        flex-direction: column;
+    }
+
+    .music_datos a {
+        align-self: flex-end;
+    }
+
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+.music_portada {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.music_imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tarjeta_music:hover .music_imagen {
+    transform: scale(1.05);
+}
+
+
+
+/* Canciones de las 4 categorias */
+
+.music_descripcion {
+    margin: 14px 0;
+    color: #b9b6c4;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+
+.btn_escuchar {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px;
+
+    background: #b9a7c9;
+    color: #17141d;
+
+    border: none;
+    border-radius: 7px;
+
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn_escuchar:hover {
+    background: #d5c3d8;
+    transform: translateY(-2px);
+}
+
+
+.ventana_musica {
+    width: min(92%, 460px);
+    max-height: 90vh;
+    margin: auto;
+    padding: 0;
+
+    color: white;
+    background: #17141d;
+
+    border: 1px solid #52445e;
+    border-radius: 16px;
+
+    overflow: auto;
+}
+
+.ventana_musica::backdrop {
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(6px);
+}
+
+.ventana_contenido {
+    position: relative;
+    padding: 32px 24px 24px;
+}
+
+.ventana_etiqueta {
+    margin-bottom: 12px;
+    color: #b9a7c9;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.ventana_contenido h2 {
+    margin-bottom: 8px;
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+#artista_reproductor {
+    margin-bottom: 24px;
+    color: #b9b6c4;
+    font-size: 14px;
+}
+
+#spotify_reproductor {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+.cerrar_musica {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    padding: 6px 10px;
+    border: none;
+
+    background: transparent;
+    color: white;
+
+    font-size: 21px;
+    cursor: pointer;
+}
+
+
+/* Consejo de la guía musical */
+
+.guia_consejo {
+    margin-top: 36px;
+    padding: 30px;
+
+    background: #1b1923;
+    border: 1px solid #52445e;
+    border-radius: 12px;
+}
+
+.guia_consejo h3 {
+    margin: 12px 0;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.guia_consejo p {
+    margin-bottom: 14px;
+    color: #b9b6c4;
+    line-height: 1.7;
+}
+
+.guia_enlace {
+    display: inline-block;
+    margin-top: 10px;
+    color: #d5c3d8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.guia_enlace:hover {
+    text-decoration: underline;
+}
+
+
+.frases_finales {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.frases_finales p {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #b9a7c9;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+}
+
